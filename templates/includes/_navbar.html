@@ -1,0 +1,15 @@
+      <!-- Static navbar -->
+      <nav class="ui secondary pointing menu">
+        <a class="ui item {{home}}" href="/">Home</a>
+        <a class="ui item {{about}}" href="/about">About</a>
+        <a class="ui item {{howto}}" href="/howto">How To</a>
+        <div class="right menu">
+            {% if current_user.is_authenticated %}
+            <a class="ui item {{dashboard}}" href="/dashboard">{{ current_user.username }}</a>
+            <a class="ui item {{login}}" href="/logout">Logout</a>
+            {% else %}
+            <a class="ui item {{login}}" href="/login">Login</a>
+            {% endif %}
+        </div>
+      </nav>
+{% include 'includes/_flashmessages.html' %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="ui container">
+ <h1 style="text-align: center;">Emotion Classification on Texts using Artificial Neural Network</h1>
+   <form action="/" method="POST">
+      <div class="ui form fluid action input">
+           <input type="text" name="sentiment" placeholder="Type in something...">
+           <button id="uploadButton" type="button" class="ui left attached icon button"><i class="upload icon"></i></button>
+           <button type="submit" class="right attached ui button">Classify</button>
+      </div>
+   </form>
+   <!-- end of main content -->
+</div>
+<div>{% block rescontent %}{% endblock %}</div>
+{% include 'includes/__uploadmodal.html' %}
+{% endblock %}
